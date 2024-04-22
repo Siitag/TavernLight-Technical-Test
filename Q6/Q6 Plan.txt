@@ -1,0 +1,35 @@
+Task: Create a player dash with animation of player slightly shaded down behind
+
+Pseudocode:
+
+//variables
+Player player;
+Sprite playerShadedDown;
+int dashAmount;
+int currentDash;
+
+void PlayerDash
+{
+    if (player.direction == (-1,0)) //if player is facing the right side
+    {
+        while currentDash < dashAmount
+        {
+            player.location += (-1,0);
+            LoadSprite(playerShadedDown,player.location(0,0));
+            currentDash++;
+        }
+        for (i = dashAmount; i > 0; i--)
+        {
+            DeleteSprite(playerShadedDown,player.location(-i,0));
+        }
+    }
+}
+
+// Do the same for the rest of the directions
+
+Improve for actual code:
+- Could make more efficient by using variables instead for example storing the direction the player is already facing
+ instead of using player.direction == (-1,0) so it can fit in one if statement
+- improve the way the sprite is loaded and need more spirte animations as in video it gets more shaded the further it is
+- delete sprites during the dash as the shaded sprites dont cover the entire dash
+- fix variables based on how I need to for OTClient.
