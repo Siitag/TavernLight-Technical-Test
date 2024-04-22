@@ -1,0 +1,14 @@
+Task: GUI where a button goes from right to left if user clicks it, reset the button and start it from a different horizontal point
+
+Pseudocode:
+When I fix OTClient ill write a plan
+reminder: search up if OTClient uses a canvas system like unity or not
+if (yes)
+{
+    success = true;
+}
+else
+{
+    success = yes
+    but RIP weeekends
+}
