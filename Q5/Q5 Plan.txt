@@ -1,0 +1,61 @@
+Task: Spawn in tornado sprites around the player when the player types user
+
+PseudoCode:
+//variables
+
+bool toSpawn;
+int timeTaken;
+int currentTime;
+
+//grids
+int gridSize
+int bigTornadoGrid[gridSize][gridSize];
+int smallTornadoGrid[gridSize][gridSize];
+
+//sprites
+Sprite smallTornado;
+Sprite bigTornado;
+
+
+void SpawnTornadoes 
+{
+    if (toSpawn)
+    {
+        while currentTime < timeTaken
+        {
+            for (int index = 0; index < 2; index++) // loop through both grids 
+            {
+                for (int x = 1; x < gridSize - 1; x++) // x grid, -1 too gridSize to avoid the corners
+                {
+                    for (int y = 1; y < gridSize - 1; y++) // y grid
+                    {
+                        if (index == 0)
+                        {
+                            if (timeTaken < 1) 
+                            {
+                                bigTornado[x][y] = random(1, gridSize - 2);// -2 to avoid corners
+                                LoadSprite(bigTornado, bigTornado[x][y])
+                            }
+                            else
+                            {
+                                bigTornado[x][y] == [1-4] [1-3]; //not correct logic but after 1 second to have them on at all times
+                                LoadSprite(bigTornado, bigTornado[x][y])
+                            }
+                        }
+                        else
+                        {
+                            smallTornado[x][y] == random(1, gridSize - 2);
+                            LoadSprite(smallTornado, smallTornado[x][y])
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+Improve for actual code:
+- Can put bigtornado in another for loop as after 1 second all the sprites stay there therefore looping it over and over could use more memory than needed
+- This code wont produce the visual effect as shown on the screen as it wont display multiple tornadoes appear at the same time
+- Figure out how to load the sprite with OTClient
+- Need to remove the sprite after a second, this only loads it not removes it
